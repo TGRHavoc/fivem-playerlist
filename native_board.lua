@@ -15,6 +15,16 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
+-- Where do you want the menu to appear?
+local conf = {
+    x = "center", -- "left","right", center
+    y = 0.36, -- Change to what you want (maximum value should be 0.65, otherwise you will have to change "playersPerPage")
+
+    left = 0.13,
+    right = 0.85, -- looks about right for the width used.
+    center = 0.5
+}
+
 --[[
 variables to keep track of stuff..
 ]]
@@ -311,6 +321,15 @@ function draw()
     PushScaleformMovieFunctionParameterString("Online Players: Page " .. (currentPage+1) .. "/" .. maxPages)
     PopScaleformMovieFunctionVoid()
 
+    local x, y = conf.x, conf.y
+
+    if type(x) == "string" then
+        x = conf[x]
+    end
+    if type(y) == "string" then
+        y = conf[y]
+    end
+
     -- Draw in the top right corner of the screen
-    DrawScaleformMovie(scaleform, 0.13, 0.36, 0.25, 0.7, 255, 255, 255, 255)
+    DrawScaleformMovie(scaleform, x, y, 0.25, 0.7, 255, 255, 255, 255)
 end
