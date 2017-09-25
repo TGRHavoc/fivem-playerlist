@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -- Where do you want the menu to appear?
 local conf = {
-    x = "center", -- "left","right", center
+    x = "left", -- "left","right", center
     y = 0.36, -- Change to what you want (maximum value should be 0.65, otherwise you will have to change "playersPerPage")
 
     left = 0.13,
