@@ -290,6 +290,12 @@ function generatePage()
         -- Since we set "type" to 2, we need to pass the colour of the text as well..
         PushScaleformMovieFunctionParameterInt(getColourForName(name))
 
+        PushScaleformMovieFunctionParameterBool(false) -- Not actually set
+        PushScaleformMovieFunctionParameterBool(false) -- Not actually set
+
+        PushScaleformMovieFunctionParameterBool(true) -- Border
+
+
         PopScaleformMovieFunctionVoid()
     end
 end
